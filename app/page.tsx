@@ -1,5 +1,5 @@
-import LayoutTopCache from './layout-top-cache'
-import LayoutFuncCache from './layout-func-cache'
+import LayoutTopCache from "./layout-top-cache";
+import LayoutFuncCache from "./layout-func-cache";
 
 export default function Page() {
   return (
@@ -12,5 +12,5 @@ export default function Page() {
         <p>関数内キャッシュ適用中の子要素</p>
       </LayoutFuncCache>
     </>
-  )
+  );
 }
