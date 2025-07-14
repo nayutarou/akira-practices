@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ComponentA, ComponentB } from "./ui/time-components";
+import InteractiveCounter from "./ui/interactive-counter";
 
 // このページを動的レンダリングに設定します。
 // これにより、リクエストごとにページが再生成されます。
@@ -16,12 +17,15 @@ export default async function Page() {
       <p>
         しかし、サーバー側のコンソールログを見ると、時間は1回しか取得されていません。
       </p>
-      <div style={{ fontWeight: 'bold', fontSize: '1.2rem', color: 'green' }}>
+      <div style={{ fontWeight: "bold", fontSize: "1.2rem", color: "green" }}>
         <ComponentA />
       </div>
-      <div style={{ fontWeight: 'bold', fontSize: '1.2rem', color: 'green' }}>
+      <div style={{ fontWeight: "bold", fontSize: "1.2rem", color: "green" }}>
         <ComponentB />
       </div>
+
+      <InteractiveCounter />
+
       <Link href="/" style={{ fontSize: "1.2rem", color: "blue" }}>
         トップページに戻る
       </Link>
