@@ -16,12 +16,12 @@ export default async function Page() {
       <p>
         しかし、サーバー側のコンソールログを見ると、時間は1回しか取得されていません。
       </p>
-      <p style={{ fontWeight: "bold", fontSize: "1.2rem", color: "green" }}>
+      <div style={{ fontWeight: 'bold', fontSize: '1.2rem', color: 'green' }}>
         <ComponentA />
-      </p>
-      <p style={{ fontWeight: "bold", fontSize: "1.2rem", color: "green" }}>
+      </div>
+      <div style={{ fontWeight: 'bold', fontSize: '1.2rem', color: 'green' }}>
         <ComponentB />
-      </p>
+      </div>
       <Link href="/" style={{ fontSize: "1.2rem", color: "blue" }}>
         トップページに戻る
       </Link>
