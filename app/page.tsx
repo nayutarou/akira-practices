@@ -12,6 +12,9 @@ export default function Page() {
         <Link href="/func-cache" style={{ fontSize: '1.2rem', color: 'green' }}>
           2. 動的レンダリング + 関数キャッシュ (Data Cache) のデモ
         </Link>
+        <Link href="/cache-summary" style={{ fontSize: '1.2rem', color: 'purple' }}>
+          3. キャッシュ戦略のまとめ
+        </Link>
       </nav>
     </main>
   );
