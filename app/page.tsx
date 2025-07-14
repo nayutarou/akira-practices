@@ -1,23 +1,19 @@
-import LayoutTopCache from './top-cache/layout-top-cache';
-import LayoutFuncCache from './func-cache/layout-func-cache';
-import { getServerTime } from "@/lib/getTime";
 import Link from 'next/link';
 
 export default function Page() {
   return (
-    <>
-      <LayoutTopCache>
-        <p>ファイルトップキャッシュ適用中の子要素</p>
-        <p>サーバー時間: {getServerTime()}</p>
-      </LayoutTopCache> 
-
-      <LayoutFuncCache>
-        <p>関数内キャッシュ適用中の子要素</p>
-        <p>サーバー時間 : {getServerTime()}</p>
-      </LayoutFuncCache>
-
-      <Link href="/func-cache">Func Cache パージへ</Link>
-
-    </>
+    <main style={{ padding: '2rem' }}>
+      <h1>Next.js キャッシュデモ</h1>
+      <p>以下のリンクから、異なるキャッシュ戦略の挙動を確認できます。</p>
+      <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '2rem' }}>
+        <Link href="/top-cache" style={{ fontSize: '1.2rem', color: 'blue' }}>
+          1. トップレベルキャッシュ (Full Route Cache) のデモ
+        </Link>
+        <Link href="/func-cache" style={{ fontSize: '1.2rem', color: 'green' }}>
+          2. 動的レンダリング + 関数キャッシュ (Data Cache) のデモ
+        </Link>
+      </nav>
+    </main>
   );
 }
+
