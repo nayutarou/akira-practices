@@ -15,6 +15,9 @@ export default function Page() {
         <Link href="/cache-demos/cache-summary" style={{ fontSize: '1.2rem', color: 'purple' }}>
           3. キャッシュ戦略のまとめ
         </Link>
+        <Link href="/folder-structure-guide" style={{ fontSize: '1.2rem', color: 'orange' }}>
+          4. フォルダ構造ガイド
+        </Link>
       </nav>
     </main>
   );
