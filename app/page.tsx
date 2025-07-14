@@ -21,6 +21,15 @@ export default function Page() {
           3. キャッシュ戦略のまとめ
         </Link>
         </div>
+        <h2>天気アプリについて</h2>
+        <div>
+          <Link href="/weather-demos/weather-app" style={{ fontSize: '1.2rem', color: 'red', display: 'block' }}>
+            天気アプリ
+          </Link>
+          <Link href="/weather-demos/summary" style={{ fontSize: '1.2rem', color: 'brown', display: 'block' }}>
+            天気アプリ概要
+          </Link>
+        </div>
       </nav>
     </main>
   );
