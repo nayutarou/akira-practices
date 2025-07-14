@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from 'react';
-import { getWeatherData } from '../cache-demos/lib/getWeather';
+import Image from 'next/image';
+import { getWeatherData } from '../lib/getWeather';
 
 export default function WeatherPage() {
   const [city, setCity] = useState('');
@@ -57,11 +58,12 @@ export default function WeatherPage() {
           <p>湿度: {weatherData.main.humidity}%</p>
           <p>風速: {weatherData.wind.speed} m/s</p>
           {weatherData.weather[0].icon && (
-            <img
+            <Image
               src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
               alt={weatherData.weather[0].description}
-              style={{ width: '50px', height: '50px' }}
-            />
+              width={50}
+              height={50}
+          />
           )}
         </div>
       )}

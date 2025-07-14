@@ -24,7 +24,8 @@
       "@/components/*": ["components/*"],
       "@/lib/*": ["app/lib/*"],
       "@/ui/*": ["app/ui/*"],
-      "@/cache-demos/*": ["app/cache-demos/*"]
+      "@/cache-demos/*": ["app/cache-demos/*"],
+      "@/weather/*": ["app/weather/*"],
     }
   },
   "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
