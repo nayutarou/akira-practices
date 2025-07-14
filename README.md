@@ -74,3 +74,19 @@ npm run dev
 *   React
 *   TypeScript
 
+## 天気アプリ
+
+このプロジェクトには、Next.js を使用して構築されたシンプルな天気アプリも含まれています。OpenWeatherMap API を利用して、指定した都市の現在の天気情報を表示します。
+
+### アクセス方法
+
+開発サーバーが起動している状態で、以下のURLにアクセスしてください。
+
+[http://localhost:3000/weather-demos/app](http://localhost:3000/weather-demos/app)
+
+### 概要
+
+天気アプリの機能や技術スタックに関する詳細は、以下のページで確認できます。
+
+[http://localhost:3000/weather-demos/summary](http://localhost:3000/weather-demos/summary)
+
