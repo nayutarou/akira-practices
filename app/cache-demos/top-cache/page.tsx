@@ -1,4 +1,4 @@
-import { getServerTime } from "@/lib/getTime";
+import { getServerTime } from "@/cache-demos/lib/getTime";
 import Link from "next/link";
 
 // このページはデフォルトで静的にレンダリングされます。

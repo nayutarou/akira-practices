@@ -1,4 +1,4 @@
-import { getServerTime } from '@/lib/getTime'
+import { getServerTime } from '@/cache-demos/lib/getTime'
 
 // このコンポーネントはサーバーサイドでレンダリングされます
 export async function ComponentA() {

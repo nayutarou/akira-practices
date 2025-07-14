@@ -18,7 +18,7 @@ export default function CacheSummaryPage() {
           <li><strong>サーバー負荷を軽減したい場合:</strong> サーバーは静的なファイルを返すだけなので、動的な処理が不要になり、サーバーへの負荷が大幅に軽減されます。</li>
         </ul>
         <p>
-          <Link href="/top-cache">→ デモページで確認する</Link>
+          <Link href="/cache-demos/top-cache">→ デモページで確認する</Link>
         </p>
       </section>
 
@@ -34,7 +34,7 @@ export default function CacheSummaryPage() {
           <li><strong>サーバーコンポーネントのレンダリングパフォーマンスを最適化したい場合:</strong> 特に、動的にレンダリングされるページで、サーバー側の処理を効率化するのに役立ちます。</li>
         </ul>
         <p>
-          <Link href="/func-cache">→ デモページで確認する</Link>
+          <Link href="/cache-demos/func-cache">→ デモページで確認する</Link>
         </p>
       </section>
 
