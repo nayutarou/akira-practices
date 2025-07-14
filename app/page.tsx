@@ -6,18 +6,21 @@ export default function Page() {
       <h1>Next.js キャッシュデモ</h1>
       <p>以下のリンクから、異なるキャッシュ戦略の挙動を確認できます。</p>
       <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '2rem' }}>
-        <Link href="/cache-demos/top-cache" style={{ fontSize: '1.2rem', color: 'blue' }}>
+        <Link href="/folder-structure-guide" style={{ fontSize: '1.2rem', color: 'orange' }}>
+          -- フォルダ構造ガイド --
+        </Link>
+        <h2 style={{margin: "0"}}>cacheについて</h2>
+        <div style={{backgroundColor: '#fff', padding: '1rem',border: '2px solid #ccc', borderRadius: '20px'}}>
+        <Link href="/cache-demos/top-cache" style={{ fontSize: '1.2rem', color: 'blue',display: 'block' }}>
           1. トップレベルキャッシュ (Full Route Cache) のデモ
         </Link>
-        <Link href="/cache-demos/func-cache" style={{ fontSize: '1.2rem', color: 'green' }}>
+        <Link href="/cache-demos/func-cache" style={{ fontSize: '1.2rem', color: 'green',display: 'block' }}>
           2. 動的レンダリング + 関数キャッシュ (Data Cache) のデモ
         </Link>
-        <Link href="/cache-demos/cache-summary" style={{ fontSize: '1.2rem', color: 'purple' }}>
+        <Link href="/cache-demos/cache-summary" style={{ fontSize: '1.2rem', color: 'purple',display: 'block' }}>
           3. キャッシュ戦略のまとめ
         </Link>
-        <Link href="/folder-structure-guide" style={{ fontSize: '1.2rem', color: 'orange' }}>
-          4. フォルダ構造ガイド
-        </Link>
+        </div>
       </nav>
     </main>
   );
