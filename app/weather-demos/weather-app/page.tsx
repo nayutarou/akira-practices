@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { getWeatherData } from '../lib/getWeather';
+import Link from 'next/link';
 
 export default function WeatherPage() {
   const [city, setCity] = useState('');
@@ -67,6 +68,9 @@ export default function WeatherPage() {
           )}
         </div>
       )}
+      <Link href="/" style={{ fontSize: '1.2rem', color: 'blue', display: 'block', marginTop: '20px' }}>
+        Topページに戻る
+      </Link>
     </div>
   );
 }
