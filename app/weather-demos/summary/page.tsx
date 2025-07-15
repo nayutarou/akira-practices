@@ -40,7 +40,8 @@ export default function WeatherSummaryPage() {
         <h2>技術スタック:</h2>
         <ul>
           <li><strong>フレームワーク:</strong> Next.js (React)</li>
-          <li><strong>天気データ:</strong> OpenWeatherMap の Geocoding API で都市名を緯度経度に変換し、その情報をもとに Weather API を利用して天気情報を取得しています。APIキーは環境変数 (`NEXT_PUBLIC_OPENWEATHER_API_KEY`) から読み込まれます。</li>
+          <li><strong>日本語変換:</strong> `kuroshiro` と `kuromoji` を利用して、入力された日本語の地名をローマ字に変換しています。これにより、海外のAPIでも日本語の地名を正確に扱うことができます。</li>
+          <li><strong>天気データ:</strong> OpenWeatherMap の Geocoding API で、ローマ字に変換した都市名を緯度経度に変換し、その情報をもとに Weather API を利用して天気情報を取得しています。APIキーは環境変数 (`NEXT_PUBLIC_OPENWEATHER_API_KEY`) から読み込まれます。</li>
           <li><strong>データフェッチ:</strong> クライアントサイドで `fetch` を使用してAPIを呼び出しています。</li>
           <li><strong>データキャッシュ:</strong> クライアントサイドでのデータ取得は、ブラウザのキャッシュやクライアントサイドの状態管理によってデータの鮮度が管理されます。</li>
         </ul>
