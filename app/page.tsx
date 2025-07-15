@@ -30,6 +30,15 @@ export default function Page() {
             天気アプリ概要
           </Link>
         </div>
+        <h2>ホテル検索アプリについて</h2>
+        <div>
+          <Link href="/hotel-search-demos/hotel-search-app" style={{ fontSize: '1.2rem', color: 'navy', display: 'block' }}>
+            ホテル検索アプリ
+          </Link>
+          <Link href="/hotel-search-demos/summary" style={{ fontSize: '1.2rem', color: 'teal', display: 'block' }}>
+            ホテル検索アプリ概要
+          </Link>
+        </div>
       </nav>
     </main>
   );
