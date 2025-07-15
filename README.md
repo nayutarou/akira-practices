@@ -1,10 +1,10 @@
-# Next.js キャッシュデモ
+# Next.js キャッシュデモ & アプリケーション集
 
-このプロジェクトは、Next.js の App Router における異なるキャッシュ戦略の挙動を理解するためのデモンストレーションアプリケーションです。
+このプロジェクトは、Next.js の App Router における異なるキャッシュ戦略の挙動を理解するためのデモンストレーションと、いくつかのシンプルなアプリケーションをまとめたものです。
 
 ## 概要
 
-Next.js は、ウェブアプリケーションのパフォーマンスを最適化するために様々なキャッシュメカニズムを提供しています。このプロジェクトでは、主に以下の2つのキャッシュ戦略に焦点を当ててその挙動を視覚的に確認できます。
+Next.js は、ウェブアプリケーションのパフォーマンスを最適化するために様々なキャッシュメカニズムを提供しています。このプロジェクトでは、主に以下のキャッシュ戦略に焦点を当ててその挙動を視覚的に確認できます。
 
 1.  **トップレベルキャッシュ (Full Route Cache)**
     ビルド時にページ全体が静的に生成され、キャッシュされる挙動を示します。主に頻繁に更新されないコンテンツに適しています。
@@ -13,6 +13,11 @@ Next.js は、ウェブアプリケーションのパフォーマンスを最適
     `React.cache` を使用して、サーバーコンポーネント内で実行される非同期関数の結果を、単一のリクエストのライフサイクル内でキャッシュする挙動を示します。
 
 また、これらのキャッシュ戦略についてまとめた解説ページも含まれています。
+
+さらに、以下のシンプルなアプリケーションも実装されています。
+
+*   **天気アプリ:** OpenWeatherMap API を利用して、指定した都市の天気情報を表示します。日本語での都市名入力に対応しています。
+*   **ホテル検索アプリ:** 楽天トラベルAPIを利用して、日本のホテルを検索し、結果をページネーションや並び替え機能付きで表示します。
 
 ## セットアップ
 
@@ -25,6 +30,12 @@ Next.js は、ウェブアプリケーションのパフォーマンスを最適
     ```bash
     npm install
     ```
+3.  **APIキーの設定:**
+    `.env.local` ファイルを作成し、以下の環境変数を設定してください。
+    *   **OpenWeatherMap API Key (天気アプリ用):**
+        `NEXT_PUBLIC_OPENWEATHER_API_KEY=あなたのOpenWeatherMapAPIキー`
+    *   **楽天トラベルAPI Application ID (ホテル検索アプリ用):**
+        `RAKUTEN_TRAVEL_API_APP_ID=あなたの楽天トラベルAPIアプリケーションID`
 
 ## 実行方法
 
@@ -68,25 +79,30 @@ npm run dev
 *   **キャッシュ戦略のまとめ:** (`/cache-demos/cache-summary`)
     *   トップレベルキャッシュと関数キャッシュの概要、使い分けのポイントについて解説しています。
 
+## アプリケーション
+
+### 天気アプリ
+
+OpenWeatherMap API を利用して、指定した都市の現在の天気情報を表示します。日本語での都市名入力に対応しています。
+
+*   **アクセス方法:** [http://localhost:3000/weather-demos/weather-app](http://localhost:3000/weather-demos/weather-app)
+*   **概要:** [http://localhost:3000/weather-demos/summary](http://localhost:3000/weather-demos/summary)
+
+### ホテル検索アプリ
+
+楽天トラベルAPIを利用して、日本のホテルを検索し、結果をページネーションや並び替え機能付きで表示します。評価の星表示にはSVGを使用し、小数点以下の評価も正確に表現しています。
+
+*   **アクセス方法:** [http://localhost:3000/hotel-search-demos/hotel-search-app](http://localhost:3000/hotel-search-demos/hotel-search-app)
+*   **概要:** [http://localhost:3000/hotel-search-demos/summary](http://localhost:3000/hotel-search-demos/summary)
+
 ## 技術スタック
 
 *   Next.js
 *   React
 *   TypeScript
-
-## 天気アプリ
-
-このプロジェクトには、Next.js を使用して構築されたシンプルな天気アプリも含まれています。OpenWeatherMap API を利用して、指定した都市の現在の天気情報を表示します。
-
-### アクセス方法
-
-開発サーバーが起動している状態で、以下のURLにアクセスしてください。
-
-[http://localhost:3000/weather-demos/app](http://localhost:3000/weather-demos/app)
-
-### 概要
-
-天気アプリの機能や技術スタックに関する詳細は、以下のページで確認できます。
-
-[http://localhost:3000/weather-demos/summary](http://localhost:3000/weather-demos/summary)
-
+*   **API連携:**
+    *   OpenWeatherMap API (天気アプリ)
+    *   楽天トラベルAPI (ホテル検索アプリ)
+*   **日本語処理:** `kuroshiro` および `kuromoji` (天気アプリの日本語入力対応)
+*   **画像最適化:** Next.js Image コンポーネント (`next.config.ts` で外部ドメイン設定)
+*   **UI/UX:** SVGによるカスタムコンポーネント (ホテル検索アプリの星評価)
