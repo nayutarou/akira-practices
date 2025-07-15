@@ -28,7 +28,7 @@ export async function getWeatherData(city: string) {
   const romajiCity = await kuroshiroInstance.convert(city, { to: "romaji", romajiSystem: "passport" });
 
   // Geocoding APIを呼び出し、ローマ字の都市名で検索
-  const geocodingUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${romajiCity},JP&limit=1&appid=${apiKey}`;
+  const geocodingUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${romajiCity}&limit=1&appid=${apiKey}`;
 
   try {
     const geoRes = await fetch(geocodingUrl);
