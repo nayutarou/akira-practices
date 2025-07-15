@@ -1,3 +1,20 @@
+"use server";
+import Kuroshiro from "kuroshiro";
+import KuromojiAnalyzer from "kuroshiro-analyzer-kuromoji";
+
+// Kuroshiroのインスタンスを保持するための変数
+let kuroshiro: Kuroshiro | null = null;
+
+// Kuroshiroの初期化を行う非同期関数
+const initializeKuroshiro = async () => {
+  if (kuroshiro) {
+    return kuroshiro;
+  }
+  const instance = new Kuroshiro();
+  await instance.init(new KuromojiAnalyzer());
+  kuroshiro = instance;
+  return kuroshiro;
+};
 
 export async function getWeatherData(city: string) {
   const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY;
@@ -5,9 +22,13 @@ export async function getWeatherData(city: string) {
     throw new Error("OpenWeatherMap API key is not set.");
   }
 
-  // ステップ1：Geocoding APIを使用して、都市名を緯度と経度に変換します。
-  // これにより、日本語などの非ASCII文字を含む都市名も処理できます。
-  const geocodingUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
+  // Kuroshiroを初期化し、インスタンスを取得
+  const kuroshiroInstance = await initializeKuroshiro();
+  // 入力された日本語の都市名をローマ字に変換
+  const romajiCity = await kuroshiroInstance.convert(city, { to: "romaji", romajiSystem: "passport" });
+
+  // Geocoding APIを呼び出し、ローマ字の都市名で検索
+  const geocodingUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${romajiCity},JP&limit=1&appid=${apiKey}`;
 
   try {
     const geoRes = await fetch(geocodingUrl);
@@ -22,8 +43,7 @@ export async function getWeatherData(city: string) {
 
     const { lat, lon } = geoData[0];
 
-    // ステップ2：取得した緯度と経度を使用して、天気データを取得します。
-    // 'lang=ja' パラメータにより、天気の説明が日本語になります。
+    // 取得した緯度と経度を使用して、天気データを取得
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=ja`;
 
     const weatherRes = await fetch(weatherUrl);
