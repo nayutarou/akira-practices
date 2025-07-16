@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import { getPlaceDetails, Place } from '../../lib/getSightseeingData';
 import { useParams } from 'next/navigation';
+import Image from 'next/image';
 
 const SpotDetailPage = () => {
   const [place, setPlace] = useState<Place | null>(null);
@@ -51,10 +52,12 @@ const SpotDetailPage = () => {
               <h2 className="text-2xl font-semibold mb-4">写真</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {place.photos && place.photos.map((photo, index) => (
-                  <img 
+                  <Image 
                     key={index} 
                     src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photo.photo_reference}&key=${process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY}`}
                     alt={place.name}
+                    width={400}
+                    height={300}
                     className="rounded-lg shadow-md"
                   />
                 ))}

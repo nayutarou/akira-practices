@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   images: {
     // Next.jsのImageコンポーネントで外部ドメインの画像を表示するために、
     // ここにドメインやパターンを登録する必要があります。
-    domains: ['hbb.afl.rakuten.co.jp', 'img.travel.rakuten.co.jp'],
+    domains: ['hbb.afl.rakuten.co.jp', 'img.travel.rakuten.co.jp', 'maps.googleapis.com'],
     remotePatterns: [
       {
         protocol: "http",
