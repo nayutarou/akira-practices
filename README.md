@@ -18,6 +18,7 @@ Next.js は、ウェブアプリケーションのパフォーマンスを最適
 
 *   **天気アプリ:** OpenWeatherMap API を利用して、指定した都市の天気情報を表示します。日本語での都市名入力に対応しています。
 *   **ホテル検索アプリ:** 楽天トラベルAPIを利用して、日本のホテルを検索し、結果をページネーションや並び替え機能付きで表示します。
+*   **観光地検索アプリ:** Google Places API を利用して、日本の観光地を検索し、地図や詳細情報を表示します。
 
 ## セットアップ
 
@@ -34,8 +35,9 @@ Next.js は、ウェブアプリケーションのパフォーマンスを最適
     `.env.local` ファイルを作成し、以下の環境変数を設定してください。
     *   **OpenWeatherMap API Key (天気アプリ用):**
         `NEXT_PUBLIC_OPENWEATHER_API_KEY=あなたのOpenWeatherMapAPIキー`
-    *   **楽天トラベルAPI Application ID (ホテル検索アプリ用):**
-        `RAKUTEN_TRAVEL_API_APP_ID=あなたの楽天トラベルAPIアプリケーションID`
+    *   **Google Places API Key (観光地検索アプリ用):**
+        `GOOGLE_PLACES_API_KEY=あなたのGoogle Places APIキー`
+        `NEXT_PUBLIC_GOOGLE_PLACES_API_KEY=あなたのGoogle Places APIキー`
 
 ## 実行方法
 
@@ -95,6 +97,13 @@ OpenWeatherMap API を利用して、指定した都市の現在の天気情報�
 *   **アクセス方法:** [http://localhost:3000/hotel-search-demos/hotel-search-app](http://localhost:3000/hotel-search-demos/hotel-search-app)
 *   **概要:** [http://localhost:3000/hotel-search-demos/summary](http://localhost:3000/hotel-search-demos/summary)
 
+### 観光地検索アプリ
+
+Google Places API を利用して、日本の観光地を検索し、地図や写真、レビューなどの詳細情報を表示します。
+
+*   **アクセス方法:** [http://localhost:3000/sightseeing-search-demos/sightseeing-app](http://localhost:3000/sightseeing-search-demos/sightseeing-app)
+*   **概要:** [http://localhost:3000/sightseeing-search-demos/summary](http://localhost:3000/sightseeing-search-demos/summary)
+
 ## 技術スタック
 
 *   Next.js
@@ -103,6 +112,7 @@ OpenWeatherMap API を利用して、指定した都市の現在の天気情報�
 *   **API連携:**
     *   OpenWeatherMap API (天気アプリ)
     *   楽天トラベルAPI (ホテル検索アプリ)
+    *   Google Places API (観光地検索アプリ)
 *   **日本語処理:** `kuroshiro` および `kuromoji` (天気アプリの日本語入力対応)
 *   **画像最適化:** Next.js Image コンポーネント (`next.config.ts` で外部ドメイン設定)
 *   **UI/UX:** SVGによるカスタムコンポーネント (ホテル検索アプリの星評価)
